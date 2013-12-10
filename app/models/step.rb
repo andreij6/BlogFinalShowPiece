@@ -1,5 +1,5 @@
 class Step < ActiveRecord::Base
-  attr_accessible :recipe_id, :content
+  attr_accessible :recipe_id, :content, :number
   
   validates :content, presence: true
   validates :number, presence: true

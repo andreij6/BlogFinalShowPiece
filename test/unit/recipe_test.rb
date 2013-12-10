@@ -14,4 +14,29 @@ class RecipeTest < ActiveSupport::TestCase
     assert !recipe.errors[:description].empty?
   end
   
+  test "the recipe has a prep" do
+    recipe = Recipe.new
+    assert !recipe.save
+    assert !recipe.errors[:prep].empty?
+  end
+  
+  test "the recipe has a cook time " do
+    recipe = Recipe.new
+    assert !recipe.save
+    assert !recipe.errors[:cook].empty?
+  end
+  
+  test "the recipe an assigned difficulty" do
+    recipe = Recipe.new
+    assert !recipe.save
+    assert !recipe.errors[:difficulty].empty?
+  end
+  
+  test "the recipe is in a category " do
+    recipe = Recipe.new
+    assert !recipe.save
+    assert !recipe.errors[:category].empty?
+  end
+  
+  
 end
