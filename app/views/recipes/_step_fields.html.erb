@@ -1,0 +1,10 @@
+<fieldset>
+	<%= f.label :content, "Step" %>
+	<%= f.text_area :content %><br />
+	<%= f.check_box :_destroy %>
+	<%= f.label :_destroy, "Remove Step" %>
+	<%= f.fields_for :ingredients do |builder|%>
+	 	<%= render 'ingredient_fields', f: builder %>
+	<% end %>
+	<%= link_to_add_fields "Add Ingredient", f, :ingredients %>
+</fieldset>

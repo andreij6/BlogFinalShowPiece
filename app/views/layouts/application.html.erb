@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playground</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://platform.fatsecret.com/js?key=e70941d624cf445c836c98932317dd7a&auto_template=false&theme=none" %>
+  <%= csrf_meta_tags %>
+  	<script>
+			function doLoad(){
+				fatsecret.setContainer('container');
+				fatsecret.setCanvas("food.get", {food_id: 91});
+			}
+	</script>
+</head>
+<body onload="doLoad()">
+
+	<section class="container">
+		<%= yield %>
+	</section>
+
+</body>
+</html>
