@@ -1,8 +1,9 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :steps_attributes
+  attr_accessible :name, :number, :description, :steps_attributes
   
   validates :name, presence: true
   validates :description, presence: true
+  
   
   has_many :steps
   

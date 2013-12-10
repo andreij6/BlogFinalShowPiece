@@ -7,4 +7,11 @@ class StepTest < ActiveSupport::TestCase
     assert !step.save
     assert !step.errors[:content].empty?
   end
+  
+  test "the step has a number" do
+    step = Step.new
+    assert !step.save
+    assert !step.errors[:number].empty?
+  end
+  
 end
