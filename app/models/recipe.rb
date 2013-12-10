@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :tips, :prep, :cook, 
+  attr_accessible :name, :description, :tips, :prep, :cook, :holidays, 
                   :difficulty, :category, :steps_attributes
   
   validates :name, presence: true
@@ -8,6 +8,7 @@ class Recipe < ActiveRecord::Base
   validates :prep, presence: true
   validates :difficulty, presence: true
   validates :category, presence: true
+  validates :holidays, presence: true
   
   
   has_many :steps

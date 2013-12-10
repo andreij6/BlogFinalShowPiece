@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
+  # rake db:test:load
   #ruby -Itest test/unit/recipe_test.rb
   test "the recipe is given a title " do
     recipe = Recipe.new
@@ -38,5 +39,10 @@ class RecipeTest < ActiveSupport::TestCase
     assert !recipe.errors[:category].empty?
   end
   
+  test "recipe holidays is true or false " do
+    recipe = Recipe.new
+    assert !recipe.save
+    assert !recipe.errors[:holidays].empty?
+  end
   
 end
